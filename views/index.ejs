@@ -22,7 +22,10 @@
                         <h1 class="text-white text-3xl tracking-tighter"> <%= val %> </h1>
                         <div class="flex w-full justify-between items-center mt-3">
                             <a class="text-blue-500 inline-block" href="/file/<%= val %>">Read More.</a>
+                            <div class="flex gap-2 items-center">
                             <a class="text-zinc-600" href="/edit/<%= val%>">Edit title</a>
+                            <a class="text-red-500 ml-4" href="/delete/<%= val %>" onclick="return confirm('Are you sure you want to delete this note?')">Delete</a>
+                            </div>
                         </div>
                    
                     </div>

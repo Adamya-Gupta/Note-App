@@ -38,5 +38,17 @@ app.post('/create',(req,res)=>{
     })
 })
 
+app.get('/delete/:filename', (req, res) => {
+    const filePath = path.join(__dirname, 'files', req.params.filename);
+    fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error("Failed to delete:", err);
+            return res.status(500).send("Failed to delete the note.");
+        }
+        res.redirect('/');
+    });
+})
+
+
 
 app.listen(3000)
